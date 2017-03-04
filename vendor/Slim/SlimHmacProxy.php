@@ -525,7 +525,21 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillGrid_actProcessConfirm' => 'restApiDefaultCall',
                                     'pkGetConsultantJobs_actProcessConfirm' => 'restApiDefaultCall',
      
-         //**---- ActProcessConfirm -------------------          
+         //**---- ActProcessConfirm -------------------      
+         //** SysRefereeTypes ----------------------
+                                    'pkDelete_sysRefereeTypes' => 'restApiDefaultCall', 
+                                    'pkInsert_sysRefereeTypes' => 'restApiDefaultCall',
+                                    'pkUpdate_sysRefereeTypes' => 'restApiDefaultCall', 
+                                    'pkDeleteAct_sysRefereeTypes' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysRefereeTypes' => 'restApiDefaultCall',
+                                    'pkFillRefereeTypesDdList_sysRefereeTypes' => 'restApiDefaultCall', 
+                                    'pkFillRefereeTypesList_sysRefereeTypes' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_sysRefereeTypes' => 'restApiDefaultCall',
+        //**---- SysRefereeTypes -------------------      
+        
+        
+        
+        
     );
 
     /**
@@ -1161,6 +1175,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -18) == '_actProcessConfirm') {          
             $this->setRestApiEndPoint('actprocessconfirm.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -16) == '_sysRefereeTypes') {          
+            $this->setRestApiEndPoint('sysrefereetypes.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
